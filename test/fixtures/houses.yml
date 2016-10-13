@@ -4,12 +4,10 @@ one:
   name: MyString
   seat: MyString
   words: MyText
-  sigil_url: MyString
-  character: one
+  image_url: MyText
 
 two:
   name: MyString
   seat: MyString
   words: MyText
-  sigil_url: MyString
-  character: two
+  image_url: MyText

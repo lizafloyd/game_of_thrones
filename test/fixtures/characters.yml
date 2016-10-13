@@ -4,8 +4,10 @@ one:
   first_name: MyString
   last_name: MyString
   alive: false
+  house: one
 
 two:
   first_name: MyString
   last_name: MyString
   alive: false
+  house: two

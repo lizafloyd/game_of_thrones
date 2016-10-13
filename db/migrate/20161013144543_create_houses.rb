@@ -4,8 +4,7 @@ class CreateHouses < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :seat
       t.text :words
-      t.string :sigil_url
-      t.references :character, foreign_key: true
+      t.text :sigil_url
 
       t.timestamps
     end
