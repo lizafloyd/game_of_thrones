@@ -1,0 +1,13 @@
+<%= form_for [@house, @character] do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field  :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field  :last_name %>
+
+  <%= f.label :alive, "Alive", value: true %>
+  <%= f.radio_button :alive, true, :checked => true %>
+  <%= f.label :alive, "Dead", value: false %>
+  <%= f.radio_button :alive, false %>
+
+  <%= f.submit %>
+<% end  %>
