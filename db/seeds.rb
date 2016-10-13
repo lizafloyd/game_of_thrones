@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+House.destroy_all
+Character.destroy_all
+
 jon = Character.create(first_name: "Jon", last_name: "Snow", alive: true, house_id: 1)
 tyrion = Character.create(first_name: "Tyrion", last_name: "Lannister", alive: true, house_id: 2)
 ned = Character.create(first_name: "Eddard", last_name: "Stark", alive: false, house_id: 1)
