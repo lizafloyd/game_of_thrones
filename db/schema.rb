@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013133647) do
+ActiveRecord::Schema.define(version: 20161013134429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20161013133647) do
     t.boolean  "alive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "house_id"
+    t.index ["house_id"], name: "index_characters_on_house_id", using: :btree
   end
 
+  create_table "houses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "seat"
+    t.text     "words"
+    t.string   "sigil_url"
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["character_id"], name: "index_houses_on_character_id", using: :btree
+  end
+
+  add_foreign_key "characters", "houses"
+  add_foreign_key "houses", "characters"
 end
