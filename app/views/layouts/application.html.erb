@@ -8,10 +8,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <nav>
-    <%= link_to "Home", houses_path %>
-    </nav>
-    <%= yield %>
+  <body class="holy-grail">
+    <header>
+    <%= link_to "Home", houses_path, class: "nav-link" %>
+    </header>
+    <div class="holy-grail-body">
+      <main class="holy-grail-content">
+        <%= yield %>
+      </main>
+      <nav class="holy-grail-nav"></nav>
+      <aside class="holy-grail-ads"></aside>
+    </div>
+    <footer></footer>
   </body>
 </html>

@@ -1,6 +1,14 @@
-<%= link_to "Edit Character", edit_house_character_path(@house, @character) %>
-<%= link_to "Delete Character", house_character_path(@house, @character), method: :delete %>
-
 <h1>Is <%= @character.first_name %> <%= @character.last_name %> alive?</h1>
 
-<h1><%= @character.alive ? "Sure is!" : "Nope!" %></h1>
+<% if @character.alive %>
+  <h1 class="res alive">
+<% else %>
+  <h1 class="res dead">
+<% end %>
+<%= @res %></h1>
+
+<div>
+  <%= link_to "< House #{@house.name}", house_path(@house), class: "nav-link" %>
+  <%= link_to "Edit Character", edit_house_character_path(@house, @character), class: "nav-link" %>
+  <%= link_to "Delete Character", house_character_path(@house, @character), method: :delete, class: "nav-link" %>
+</div>

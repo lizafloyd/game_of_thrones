@@ -1,12 +1,16 @@
-<%= link_to "Edit House", edit_house_path(@house) %>
-<%= link_to "Delete House", house_path(@house), method: :delete %>
-<h1><%= @house.name %></h1>
-<h3><%= @house.words %></h3>
-<%= image_tag "#{@house.sigil_url}" %>
+<h2>Which characters from House <%= @house.name %> are alive?</h2>
+<h3>Click their name to find out!</h3>
 
+<div class="house-container">
+  <% @house.characters.each do |character| %>
+    <%= link_to "#{character.first_name} #{character.last_name}", house_character_path(@house, character), class: "character-link" %>
+  <% end %>
+</div>
 
-<% @house.characters.each do |character| %>
-  <li><%= link_to "#{character.first_name} #{character.last_name}", house_character_path(@house, character) %></li>
-<% end %>
+<hr />
 
-<%= link_to "Add Character", new_house_character_path(@house) %>
+<div>
+  <%= link_to "Edit House", edit_house_path(@house), class: "nav-link" %>
+  <%= link_to "Add Character", new_house_character_path(@house), class: "nav-link" %>
+  <%= link_to "Delete House", house_path(@house), method: :delete, class: "nav-link" %>
+</div>

@@ -13,3 +13,112 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Baloo|Open+Sans:300,400,700');
+
+.holy-grail,
+.holy-grail-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.holy-grail-nav {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .holy-grail-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .holy-grail-content {
+    flex: 1;
+  }
+  .holy-grail-nav, .holy-grail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12pt;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  margin: 0.4em 0;
+  text-align: center;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 0.6em;
+  border-radius: 0.2em;
+  padding: 0.6em;
+  background: #ddd;
+}
+
+.character-link {
+  display: inline-block;
+  margin: 0.6em;
+  border-radius: 0.2em;
+  padding: 1em;
+  background: #4A89DC;
+  font-weight: 700;
+  color: #fff;
+}
+
+.holy-grail-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.house-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.house {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  border-radius: 1em;
+  padding: 2em 1em;
+  width: 300px;
+  border: 1px solid #ddd;
+}
+
+.house h2,
+.house h4 {
+  margin: 0;
+}
+
+.house img {
+  margin-top: 1em;
+  max-width: 200px;
+}
+
+.res {
+  font-family: "Baloo", serif;
+  margin-bottom: 2em;
+  font-size: 72pt;
+}
+
+.alive {
+  color: #8CC152;
+}
+
+.dead {
+  color: #DA4453;
+}

@@ -1,10 +1,18 @@
-<h1>Noble Houses</h1>
-<%= link_to "Add House", new_house_path %>
+<h2>Find out the status of your favorite Game of Thrones character!</h2>
 
-<% @houses.each do |house| %>
-  <div>
-    <h2><%= link_to "#{house.name}", house_path(house) %></h2>
-    <h4><%= house.words %></h4>
-    <%= image_tag "#{house.sigil_url}" %>
-  </div>
-<% end %>
+<div class="house-container">
+  <% @houses.each do |house| %>
+    <div class="house">
+      <h2><%= link_to "#{house.name}", house_path(house) %></h2>
+      <h4><em>"<%= house.words %>"</em></h4>
+      <%= image_tag "#{house.sigil_url}" %>
+      <%= link_to "View House", house_path(house), class: "character-link" %>
+    </div>
+  <% end %>
+</div>
+
+<hr />
+
+<div>
+  <%= link_to "Add House", new_house_path, class: "nav-link" %>
+</div>

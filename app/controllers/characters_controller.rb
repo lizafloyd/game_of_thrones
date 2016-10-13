@@ -7,6 +7,7 @@ class CharactersController < ApplicationController
   def show
     @house = House.find params[:house_id]
     @character = Character.find params[:id]
+    @character.alive ? @res = alive_res : @res = dead_res
   end
 
   def new
@@ -46,5 +47,33 @@ class CharactersController < ApplicationController
   private
   def character_params
     params.require(:character).permit(:first_name, :last_name, :alive)
+  end
+
+  def alive_res
+    ["Yep.",
+    "Yessir!",
+    "You betchya!",
+    "Oh baby, yes.",
+    "Is the Pope Catholic?",
+    "Yeah!",
+    "Very much so.",
+    "But of course.",
+    "Fo sho!",
+    "Alive as ever!",
+    "Yuppers.",
+    "Totes Magotes!",
+    "The alivest."].sample
+  end
+
+  def dead_res
+    ["Nah.",
+    "Nope.",
+    ":(",
+    "Yeah... no.",
+    "Nope!",
+    "They dead.",
+    "Not even a little bit.",
+    "George R. R. Martin did his thing.",
+    "Not anymore."].sample
   end
 end
