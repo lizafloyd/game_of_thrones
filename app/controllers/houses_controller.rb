@@ -24,10 +24,25 @@ class HousesController < ApplicationController
   end
 
   #edit
+  def edit
+    @house = House.find params[:id]
+  end
 
   #update
+  def update
+    @house = House.find params[:id]
+    @house.update(house_params)
+
+    redirect_to house_path(@house)
+  end
 
   #destroy
+  def destroy
+    @house = House.find params[:id]
+    @house.destroy
+
+    redirect_to houses_path
+  end
 
   #private
   private
