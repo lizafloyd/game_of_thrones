@@ -17,8 +17,7 @@ class HousesController < ApplicationController
 
   #create
   def create
-    @house = House.find params[:id]
-    @house.create!(house_params)
+    @house = House.create!(house_params)
 
     redirect_to house_path(@house)
   end
@@ -47,6 +46,6 @@ class HousesController < ApplicationController
   #private
   private
   def house_params
-    params.require(:house).permit(:name, :words, :sigil_url)
+    params.require(:house).permit(:name, :seat, :words, :sigil_url)
   end
 end

@@ -1,8 +1,9 @@
 <h1>Noble Houses</h1>
+<%= link_to "Add House", new_house_path %>
 
 <% @houses.each do |house| %>
   <div>
-    <h2><%= link_to "#{house.name}", "houses/#{house.id}" %></h2>
+    <h2><%= link_to "#{house.name}", house_path(house) %></h2>
     <h4><%= house.words %></h4>
     <%= image_tag "#{house.sigil_url}" %>
   </div>

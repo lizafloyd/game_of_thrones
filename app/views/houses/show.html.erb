@@ -1,3 +1,5 @@
+<%= link_to "Edit House", edit_house_path(@house) %>
+<%= link_to "Delete House", house_path(@house), method: :delete %>
 <h1><%= @house.name %></h1>
 <h3><%= @house.words %></h3>
 <%= image_tag "#{@house.sigil_url}" %>
