@@ -6,9 +6,9 @@
   <h1 class="res dead">
 <% end %>
 <%= @res %></h1>
+<%= link_to "Back to House #{@house.name}", house_path(@house), class: "nav-link" %>
 
 <div>
-  <%= link_to "< House #{@house.name}", house_path(@house), class: "nav-link" %>
   <%= link_to "Edit Character", edit_house_character_path(@house, @character), class: "nav-link" %>
   <%= link_to "Delete Character", house_character_path(@house, @character), method: :delete, class: "nav-link" %>
 </div>
