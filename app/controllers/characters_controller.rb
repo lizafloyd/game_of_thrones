@@ -74,6 +74,7 @@ class CharactersController < ApplicationController
     "They dead.",
     "Not even a little bit.",
     "George R. R. Martin did his thing.",
+    "You should send flowers",
     "Not anymore."].sample
   end
 end
