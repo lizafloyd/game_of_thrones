@@ -8,3 +8,5 @@
 <% @house.characters.each do |character| %>
   <li><%= link_to "#{character.first_name} #{character.last_name}", house_character_path(@house, character) %></li>
 <% end %>
+
+<%= link_to "Add Character", new_house_character_path(@house) %>
