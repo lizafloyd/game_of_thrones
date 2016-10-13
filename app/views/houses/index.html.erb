@@ -2,7 +2,7 @@
 
 <% @houses.each do |house| %>
   <div>
-    <h2><%= house.name %></h2>
+    <h2><%= link_to "#{house.name}", "houses/#{house.id}" %></h2>
     <h4><%= house.words %></h4>
     <%= image_tag "#{house.sigil_url}" %>
   </div>

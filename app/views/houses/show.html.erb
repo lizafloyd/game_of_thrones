@@ -1,0 +1,8 @@
+<h1><%= @house.name %></h1>
+<h3><%= @house.words %></h3>
+<%= image_tag "#{@house.sigil_url}" %>
+
+
+<% @house.characters.each do |character| %>
+  <li><%= character.first_name %> <%= character.last_name %></li>
+<% end %>
